@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Learning Deformable Object Manipulation Using Task-Level Iterative Learning Control">
+  <meta name="keywords" content="Robotics, Deformable Object Manipulation, Iterative Learning Control, Task-Level Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Learning Deformable Object Manipulation Using Task-Level Iterative Learning Control
+  </title>
+
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://kit.fontawesome.com/19914a84eb.js" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+<section class="hero is-link is-fullheight video" style="overflow: hidden; position:relative;">
+  <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
+    <video playsinline autoplay muted loop poster="./static/paper/figs/flying_knot_sequence.png">
+      <source src="./static/videos/flying_knot_teaser.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-video is-hidden-tablet is-inline-block-mobile"
+    style="height: 154.28571428vw; width: 100%; min-width:64.81481481vh;min-height:100%;">
+    <video playsinline autoplay muted loop poster="./static/paper/figs/flying_knot_sequence.png">
+      <source src="./static/videos/flying_knot_teaser_mobile.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="overlay"></div>
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head is-hidden-mobile">
+    <header class="navbar">
+      <div class="container is-size-5">
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item pl-4 pr-4" href="https://drive.google.com/file/d/1gQA-iq5UvULHeVjsZZRBnoPa_UIH0aWw/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">
+              <span class="icon" style="margin-right:5px;">
+                <img src="./static/images/pdf.svg" alt="PDF" />
+              </span>
+              <span>Paper</span>
+            </a>
+            <a href="https://youtu.be/9zm3pyeJwcE" class="navbar-item  pl-4 pr-4" target="_blank"
+              rel="noopener noreferrer">
+              <span class="icon" style="margin-right:5px;">
+                <img src="./static/images/youtube.svg" alt="Youtube" />
+              </span>
+              <span>Video</span>
+            </a>
+            <!--
+            <span class="navbar-item  pl-4 pr-4">
+              <a href="https://github.com/real-stanford/umi-on-legs" class="button is-inverted is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+            -->
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 4rem;">
+        Learning Deformable Object Manipulation Using Task-Level Iterative Learning Control 
+      </h1>
+      <div class="column has-text-centered is-hidden-tablet">
+        <div class="publication-links">
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href="./static/paper/Flying_Knots_RSS_Paper.pdf" class="external-link button is-normal is-rounded is-dark"
+              target="_blank" rel="noopener noreferrer">
+              <span class="icon">
+                <img src="./static/images/pdf.svg" alt="PDF" />
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+          <!-- Video Link. -->
+          <span class="link-block">
+            <a href="https://youtu.be/9zm3pyeJwcE" class="external-link button is-normal is-rounded is-dark"
+              target="_blank" rel="noopener noreferrer">
+              <span class="icon">
+                <img src="./static/images/youtube.svg" alt="Youtube" />
+              </span>
+              <span>Video</span>
+            </a>
+          </span>
+          <!--
+          Code Link.
+          <span class="link-block">
+            <a href="https://github.com/real-stanford/umi-on-legs"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+          </span>
+          -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Hero footer: will stick at the bottom
+  <div class="hero-foot is-hidden-mobile">
+    <nav class="tabs is-boxed is-fullwidth is-size-5">
+      <ul>
+        <li><a href="#abstract">Abstract</a></li>
+      </ul>
+    </nav>
+  </div> -->
+</section>
+
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="content">
+        <h2 class="title is-4">Abstract</h2>
+
+        <p class="buttons">
+          <a class="button is-link is-light" href="https://drive.google.com/file/d/1gQA-iq5UvULHeVjsZZRBnoPa_UIH0aWw/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer">
+            <span class="icon" aria-hidden="true">
+              <img src="./static/images/pdf.svg" alt="" />
+            </span>
+            <span>Paper (PDF)</span>
+          </a>
+          <a class="button is-danger is-light" href="https://youtu.be/9zm3pyeJwcE" target="_blank"
+            rel="noopener noreferrer">
+            <span class="icon" aria-hidden="true">
+              <img src="./static/images/youtube.svg" alt="" />
+            </span>
+            <span>YouTube Video</span>
+          </a>
+        </p>
+
+        <p>
+          Dynamic manipulation of deformable objects is challenging for humans and robots because they have infinite degrees
+          of freedom and exhibit underactuated dynamics. We introduce a Task-Level Iterative Learning Control method for
+          dynamic manipulation of deformable objects. We demonstrate this method on a non-planar rope manipulation task
+          called the flying knot. Using a single human demonstration and a simplified rope model, the method learns
+          directly on hardware without reliance on large amounts of demonstration data or massive amounts of simulation. At
+          each iteration, the algorithm constructs a local inverse model of the robot and rope by solving a quadratic
+          program to propagate task-space errors into action updates. We evaluate performance across 7 different kinds of
+          ropes, including chain, latex surgical tubing, and braided and twisted ropes, ranging in thicknesses of 7-25mm
+          and densities of 0.013-0.5 kg/m. Learning achieves a 100% success rate within 10 trials on all ropes. Furthermore,
+          the method can successfully transfer between most rope types in approximately 2-5 trials.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template modified from <a href="https://nerfies.github.io/">NeRFies</a> and <a
+              href="https://umi-on-legs.github.io/">UMI on Legs</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+
+</html>
