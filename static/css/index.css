@@ -192,9 +192,23 @@ body {
   overflow: hidden;
 }
 
-.flying-knot-description p {
-  font-size: 1.4rem;
-  line-height: 1.7;
+.ilc-system-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.critical-point-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  background-color: #000;
+}
+
+.side-description p {
+  font-size: 1.3rem;
+  line-height: 1.65;
 }
 
 #human-flying-knot-video {

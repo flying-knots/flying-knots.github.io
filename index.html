@@ -234,7 +234,7 @@
       <!-- <h2 class="title is-2 has-text-centered">Flying Knot Task</h2> -->
       <div class="columns is-variable is-6 is-vcentered">
         <div class="column is-5">
-          <div class="content flying-knot-description">
+          <div class="content side-description">
             <p>
               A flying overhand knot is performed by manipulating one end of a rope without changing
               grip. The motion lifts and twists the rope to form a loop, then arcs to strike near the rope end so it
@@ -266,6 +266,52 @@
       </div>
     </div>
   </section>
+  
+  <section class="section" id="task-level-ilc">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered">Task-Level Iterative Learning Control</h2>
+      <div class="columns is-variable is-6 is-vcentered">
+        <div class="column is-7">
+          <img src="./static/images/ilc_system_figure.png" alt="Task-Level ILC system diagram" class="ilc-system-image">
+        </div>
+        <div class="column is-5">
+          <div class="content side-description">
+            <p>
+              Task-Level ILC improves a feedforward command over repeated hardware trials by mapping
+              measured rope task errors into command updates with an inverse model. Learning is focused on a single <strong class="hero-highlight-text">critical-point</strong>
+              of the task at rope collision.
+              <!-- The inverse model is formed from a local model linearization and solved with a quadratic program, enabling data-efficient improvement from a single demonstration. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="critical-point-objective">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered">Critical Point Objective</h2>
+      <div class="columns is-variable is-6 is-vcentered">
+        <div class="column is-6">
+          <div class="content side-description">
+            <p>
+              A critical-point objective enables learning to succeed by ignoring errors at other times
+              in the task and concentrating updates on reducing error only at the critical point. The
+              flying knot has many key moments, but we select rope collision as the critical point.
+            </p>
+          </div>
+        </div>
+        <div class="column is-6">
+          <video class="critical-point-video" autoplay muted playsinline loop preload="metadata">
+            <source src="./static/videos/critical_point.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <img src="./static/images/critvseq.png" alt="Critical-point objective versus equal-weighted objective comparison" class="ilc-system-image">
+    </div>
+  </section>
+
   <section class="section" id="abstract">
     <div class="container is-max-desktop">
       <div class="content">
