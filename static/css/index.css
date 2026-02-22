@@ -2,6 +2,14 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.hero-highlight-section {
+  background-color: #f0f2f4;
+}
+
+.hero-highlight-text {
+  color: #CE0014;
+}
+
 
 .footer .icon-link {
     font-size: 25px;
@@ -114,6 +122,88 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.task-video-panel {
+  margin-top: 0;
+}
+
+.task-video-toggle {
+  margin-top: 1rem;
+  width: min(100%, 440px);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  border-radius: 999px;
+  background: #eef1f4;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 6px 16px rgba(26, 37, 51, 0.12);
+}
+
+.task-video-toggle .button {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 2.9rem;
+  font-size: 0.98rem;
+  border: 0;
+  border-radius: 999px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.task-video-toggle .button.is-link {
+  background-color: #3273dc;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(50, 115, 220, 0.35);
+}
+
+.task-video-toggle .button.is-light {
+  background-color: transparent;
+  color: #4a4a4a;
+  box-shadow: none;
+}
+
+.task-video-toggle .button:hover {
+  transform: translateY(-1px);
+}
+
+.task-video-toggle .button:focus-visible {
+  outline: 2px solid #3273dc;
+  outline-offset: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .task-video-panel {
+    margin-top: 1.25rem;
+  }
+}
+
+.task-video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28), 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.flying-knot-description p {
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+#human-flying-knot-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #000;
 }
 
 .rounded-media {
