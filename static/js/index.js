@@ -90,80 +90,108 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  var ropeCarousel = document.getElementById('rope-results-carousel');
-  if (!ropeCarousel) {
-    return;
-  }
+  function initRobustnessCarousel(carouselId, carouselOptions) {
+    var carousel = document.getElementById(carouselId);
+    if (!carousel) {
+      return;
+    }
 
-  function clearRopeVideoControls() {
-    Array.from(ropeCarousel.querySelectorAll('video')).forEach(function (ropeVideo) {
-      ropeVideo.removeAttribute('controls');
+    function clearVideoControls() {
+      Array.from(carousel.querySelectorAll('video')).forEach(function (carouselVideo) {
+        carouselVideo.removeAttribute('controls');
+      });
+    }
+
+    clearVideoControls();
+
+    if (window.bulmaCarousel && typeof window.bulmaCarousel.attach === 'function') {
+      var options = Object.assign({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        loop: true,
+        infinite: true,
+        navigation: true,
+        pagination: true,
+        autoplay: false,
+        navigationSwipe: true,
+        breakpoints: [
+          {
+            changePoint: 640,
+            slidesToShow: 1,
+            slidesToScroll: 1
+          },
+          {
+            changePoint: 1024,
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        ]
+      }, carouselOptions || {});
+
+      window.bulmaCarousel.attach('#' + carouselId, options);
+    }
+
+    clearVideoControls();
+
+    function setHoverControls(event, show) {
+      if (!event.target || !event.target.closest) {
+        return;
+      }
+
+      var activeVideo = event.target.closest('video');
+      if (!activeVideo || !carousel.contains(activeVideo)) {
+        return;
+      }
+
+      if (event.relatedTarget && activeVideo.contains(event.relatedTarget)) {
+        return;
+      }
+
+      if (show) {
+        activeVideo.setAttribute('controls', '');
+      } else {
+        activeVideo.removeAttribute('controls');
+      }
+    }
+
+    carousel.addEventListener('mouseover', function (event) {
+      setHoverControls(event, true);
+    });
+
+    carousel.addEventListener('mouseout', function (event) {
+      setHoverControls(event, false);
+    });
+
+    carousel.addEventListener('focusin', function (event) {
+      setHoverControls(event, true);
+    });
+
+    carousel.addEventListener('focusout', function (event) {
+      setHoverControls(event, false);
     });
   }
 
-  clearRopeVideoControls();
-
-  if (window.bulmaCarousel && typeof window.bulmaCarousel.attach === 'function') {
-    window.bulmaCarousel.attach('#rope-results-carousel', {
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      loop: true,
-      infinite: true,
-      navigation: true,
-      pagination: true,
-      autoplay: false,
-      navigationSwipe: true,
-      breakpoints: [
-        {
-          changePoint: 640,
-          slidesToShow: 1,
-          slidesToScroll: 1
-        },
-        {
-          changePoint: 1024,
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      ]
-    });
-  }
-
-  clearRopeVideoControls();
-
-  function setHoverControls(event, show) {
-    if (!event.target || !event.target.closest) {
-      return;
-    }
-
-    var activeVideo = event.target.closest('video');
-    if (!activeVideo || !ropeCarousel.contains(activeVideo)) {
-      return;
-    }
-
-    if (event.relatedTarget && activeVideo.contains(event.relatedTarget)) {
-      return;
-    }
-
-    if (show) {
-      activeVideo.setAttribute('controls', '');
-    } else {
-      activeVideo.removeAttribute('controls');
-    }
-  }
-
-  ropeCarousel.addEventListener('mouseover', function (event) {
-    setHoverControls(event, true);
-  });
-
-  ropeCarousel.addEventListener('mouseout', function (event) {
-    setHoverControls(event, false);
-  });
-
-  ropeCarousel.addEventListener('focusin', function (event) {
-    setHoverControls(event, true);
-  });
-
-  ropeCarousel.addEventListener('focusout', function (event) {
-    setHoverControls(event, false);
+  initRobustnessCarousel('rope-results-carousel');
+  initRobustnessCarousel('demo-results-carousel', {
+    slidesToShow: 4,
+    loop: false,
+    infinite: false,
+    breakpoints: [
+      {
+        changePoint: 640,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      },
+      {
+        changePoint: 1024,
+        slidesToShow: 2,
+        slidesToScroll: 1
+      },
+      {
+        changePoint: 1280,
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    ]
   });
 });

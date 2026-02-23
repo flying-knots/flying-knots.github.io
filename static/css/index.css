@@ -206,6 +206,21 @@ body {
   background-color: #000;
 }
 
+.robust-outcome-row {
+  margin-top: 1.25rem;
+}
+
+.robust-outcome-video {
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-description p.robust-outcome-text {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
 .side-description p {
   font-size: 1.3rem;
   line-height: 1.65;
@@ -258,11 +273,13 @@ body {
   font-size: 1.2rem;
 }
 
-#rope-results-carousel {
+#rope-results-carousel,
+#demo-results-carousel {
   margin-top: 0.5rem;
 }
 
-#rope-results-carousel .rope-carousel-label {
+#rope-results-carousel .rope-carousel-label,
+#demo-results-carousel .rope-carousel-label {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.2;
@@ -272,10 +289,29 @@ body {
   color: #363636;
 }
 
-#rope-results-carousel .item video {
+#rope-results-carousel .item video,
+#demo-results-carousel .item video {
   display: block;
   width: 100%;
   height: auto;
+}
+
+#rope-results-carousel .slider-pagination,
+#demo-results-carousel .slider-pagination {
+  position: static;
+  margin-top: 0.75rem;
+}
+
+#rope-results-carousel .slider-pagination .slider-page,
+#demo-results-carousel .slider-pagination .slider-page {
+  background: #2f2f2f;
+}
+
+#rope-results-carousel .slider-pagination .slider-page.is-active,
+#rope-results-carousel .slider-pagination .slider-page:hover,
+#demo-results-carousel .slider-pagination .slider-page.is-active,
+#demo-results-carousel .slider-pagination .slider-page:hover {
+  background: #111;
 }
 
 
