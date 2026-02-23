@@ -10,6 +10,10 @@ body {
   color: #CE0014;
 }
 
+.critical-point-emphasis {
+  font-weight: 900;
+}
+
 
 .footer .icon-link {
     font-size: 25px;
